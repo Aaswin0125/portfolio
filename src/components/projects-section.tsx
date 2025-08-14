@@ -101,6 +101,7 @@ export function ProjectsSection() {
               key={category}
               variant={filter === category ? 'default' : 'outline'}
               onClick={() => setFilter(category)}
+              className={cn(filter !== category && "bg-background/20 dark:bg-black/10 backdrop-blur-lg border-white/20")}
             >
               {category}
             </Button>

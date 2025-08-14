@@ -41,7 +41,7 @@ export function HomeSection() {
             </div>
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 {highlightCards.map(card => (
-                    <Card key={card.title} className="bg-background/50 backdrop-blur-sm border-border/20 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <Card key={card.title} className="bg-background/20 dark:bg-black/10 backdrop-blur-lg border-white/20 shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <CardContent className="p-6 flex flex-col items-center text-center gap-4">
                            {card.icon}
                            <div>
