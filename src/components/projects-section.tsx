@@ -7,6 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { ArrowUpRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const projectsData = [
   {
@@ -19,6 +20,17 @@ const projectsData = [
     caseStudyUrl: '#',
     repoUrl: '#',
     category: 'Apps & Software',
+  },
+  {
+    title: 'AI-Powered Code Assistant',
+    description: 'A VS Code extension that provides intelligent code suggestions and refactoring.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'AI code editor',
+    tags: ['AI/ML', 'TypeScript', 'VS Code API'],
+    liveUrl: '#',
+    caseStudyUrl: '#',
+    repoUrl: '#',
+    category: 'AI/ML',
   },
   {
     title: 'Mobile Fitness Tracker',
@@ -53,9 +65,20 @@ const projectsData = [
     repoUrl: null,
     category: 'Education Projects',
   },
+  {
+    title: 'Sentiment Analysis API',
+    description: 'A RESTful API that analyzes text and returns its sentiment polarity.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'text analysis graph',
+    tags: ['AI/ML', 'Python', 'Flask', 'NLTK'],
+    liveUrl: '#',
+    caseStudyUrl: '#',
+    repoUrl: '#',
+    category: 'AI/ML',
+  }
 ];
 
-const categories = ['All', 'Apps & Software', 'Education Projects', 'Business Ventures'];
+const categories = ['All', 'Apps & Software', 'AI/ML', 'Education Projects', 'Business Ventures'];
 
 export function ProjectsSection() {
   const [filter, setFilter] = useState('All');
@@ -85,42 +108,43 @@ export function ProjectsSection() {
         </div>
         <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
-            <Card key={project.title} className="overflow-hidden flex flex-col group">
-              <CardHeader className="p-0">
-                <div className="aspect-video relative overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
-                    data-ai-hint={project.aiHint}
-                  />
+            <Card key={project.title} className="group overflow-hidden relative">
+              <div className="aspect-video relative overflow-hidden rounded-t-lg">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-ai-hint={project.aiHint}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                 <div className="absolute bottom-0 left-0 p-6">
+                    <div className="flex flex-wrap gap-2 mb-2">
+                        {project.tags.map(tag => <Badge key={tag} variant="secondary" className="bg-white/20 text-white backdrop-blur-sm">{tag}</Badge>)}
+                    </div>
+                    <CardTitle className="font-headline text-2xl text-white">{project.title}</CardTitle>
                 </div>
-              </CardHeader>
-              <CardContent className="p-6 flex-grow">
-                <CardTitle className="font-headline text-2xl mb-2">{project.title}</CardTitle>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
-                </div>
-                <p className="text-muted-foreground">{project.description}</p>
-              </CardContent>
-              <CardFooter className="p-6 pt-0 flex justify-start gap-4">
-                {project.liveUrl && (
-                  <Button asChild>
-                    <Link href={project.liveUrl} target="_blank">Live Demo <ArrowUpRight className="ml-2 h-4 w-4" /></Link>
-                  </Button>
-                )}
-                {project.caseStudyUrl && (
-                  <Button asChild variant="secondary">
-                     <Link href={project.caseStudyUrl} target="_blank">Case Study</Link>
-                  </Button>
-                )}
-                {project.repoUrl && (
-                  <Button asChild variant="ghost">
-                    <Link href={project.repoUrl} target="_blank">GitHub Repo</Link>
-                  </Button>
-                )}
-              </CardFooter>
+              </div>
+              <div className="absolute inset-0 bg-background/90 flex flex-col justify-center items-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  <div className="flex justify-center gap-4">
+                      {project.liveUrl && (
+                        <Button asChild>
+                          <Link href={project.liveUrl} target="_blank">Live Demo <ArrowUpRight className="ml-2 h-4 w-4" /></Link>
+                        </Button>
+                      )}
+                      {project.caseStudyUrl && (
+                        <Button asChild variant="secondary">
+                           <Link href={project.caseStudyUrl} target="_blank">Case Study</Link>
+                        </Button>
+                      )}
+                      {project.repoUrl && (
+                        <Button asChild variant="ghost">
+                          <Link href={project.repoUrl} target="_blank">GitHub Repo</Link>
+                        </Button>
+                      )}
+                  </div>
+              </div>
             </Card>
           ))}
         </div>
