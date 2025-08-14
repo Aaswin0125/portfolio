@@ -76,7 +76,7 @@ export function TeachingSection() {
           </div>
           <div className="lg:col-span-3 space-y-12">
             <div>
-              <h3 className="text-2xl font-bold mb-6 font-headline">Photo Gallery</h3>
+              <h3 className="text-2xl font-bold mb-6 font-headline text-center">Photo Gallery</h3>
               <div className="grid grid-cols-2 gap-4">
                 {workshopImages.map((img, index) => (
                     <Image key={index} src={img.src} alt={img.alt} width={600} height={400} className="rounded-lg object-cover hover:scale-105 transition-transform duration-300" data-ai-hint={img.aiHint} />
@@ -84,7 +84,7 @@ export function TeachingSection() {
             </div>
             </div>
              <div>
-              <h3 className="text-2xl font-bold mb-6 font-headline">Impact by the Numbers</h3>
+              <h3 className="text-2xl font-bold mb-6 font-headline text-center">Impact by the Numbers</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {stats.map(stat => (
                   <Card key={stat.label} className="text-center p-4 flex flex-col items-center justify-center">
@@ -96,7 +96,7 @@ export function TeachingSection() {
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-6 font-headline">What Students Say</h3>
+              <h3 className="text-2xl font-bold mb-6 font-headline text-center">What Students Say</h3>
               <Carousel>
                 <CarouselContent>
                   {testimonials.map((t) => (
