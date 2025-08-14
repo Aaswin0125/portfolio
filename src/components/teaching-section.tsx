@@ -74,8 +74,8 @@ export function TeachingSection() {
               ))}
             </div>
           </div>
-          <div className="lg:col-span-3 space-y-12">
-            <Card>
+          <div className="lg:col-span-3 flex flex-col items-center space-y-12">
+            <Card className="w-full">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl font-bold font-headline">Photo Gallery</CardTitle>
               </CardHeader>
@@ -87,7 +87,7 @@ export function TeachingSection() {
               </div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="w-full">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl font-bold font-headline">Impact by the Numbers</CardTitle>
               </CardHeader>
@@ -103,7 +103,7 @@ export function TeachingSection() {
                 </div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="w-full">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl font-bold font-headline">What Students Say</CardTitle>
               </CardHeader>
@@ -133,7 +133,7 @@ export function TeachingSection() {
                 </Carousel>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="w-full">
               <CardContent className="p-6 text-center">
                 <h3 className="text-2xl font-bold mb-4 font-headline">Ready to Learn?</h3>
                 <p className="text-muted-foreground mb-6">Check out my upcoming workshops or request a custom training session.</p>
