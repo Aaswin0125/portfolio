@@ -13,7 +13,7 @@ const projectsData = [
   {
     title: 'E-Learning Platform',
     description: 'An online platform for interactive courses and workshops with video streaming and quizzes.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1527697911963-20cb424e9608?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nJTIwZGFzaGJvYXJkfGVufDB8fHx8MTc1NTE2MjAzNHww&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'e-learning dashboard',
     tags: ['Next.js', 'React', 'Firebase', 'Stripe'],
     liveUrl: '#',
@@ -24,7 +24,7 @@ const projectsData = [
   {
     title: 'AI-Powered Code Assistant',
     description: 'A VS Code extension that provides intelligent code suggestions and refactoring.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxBSSUyMGNvZGUlMjBlZGl0b3J8ZW58MHx8fHwxNzU1MTYyMDM0fDA&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'AI code editor',
     tags: ['AI/ML', 'TypeScript', 'VS Code API'],
     liveUrl: '#',
@@ -35,7 +35,7 @@ const projectsData = [
   {
     title: 'Mobile Fitness Tracker',
     description: 'A cross-platform mobile app to track workouts, nutrition, and progress.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1724763750864-9e81ee45d036?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtb2JpbGUlMjBhcHAlMjBmaXRuZXNzfGVufDB8fHx8MTc1NTE2MjAzNHww&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'mobile app fitness',
     tags: ['React Native', 'Firebase', 'GraphQL'],
     liveUrl: '#',
@@ -46,7 +46,7 @@ const projectsData = [
   {
     title: 'EdTech Startup',
     description: 'Co-founded a startup to provide accessible coding education to underserved communities.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1624555130296-e551faf8969b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFydHVwJTIwdGVhbSUyMG1lZXRpbmd8ZW58MHx8fHwxNzU1MTYyMDM0fDA&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'startup team meeting',
     tags: ['Business', 'Strategy', 'Product Management'],
     liveUrl: '#',
@@ -57,7 +57,7 @@ const projectsData = [
   {
     title: 'Full-Stack Development Bootcamp',
     description: 'Designed and led a 12-week immersive bootcamp covering the MERN stack.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1577299407503-32521ca29834?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjbGFzc3Jvb20lMjBjb2Rpbmd8ZW58MHx8fHwxNzU1MTYyMDM1fDA&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'classroom coding',
     tags: ['Curriculum Design', 'Teaching', 'Mentorship'],
     liveUrl: null,
@@ -68,7 +68,7 @@ const projectsData = [
   {
     title: 'Sentiment Analysis API',
     description: 'A RESTful API that analyzes text and returns its sentiment polarity.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1580562305971-ba5d9062f0ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZXh0JTIwYW5hbHlzaXMlMjBncmFwaHxlbnwwfHx8fDE3NTUxNjIwMzR8MA&ixlib=rb-4.1.0&q=80&w=1080',
     aiHint: 'text analysis graph',
     tags: ['AI/ML', 'Python', 'Flask', 'NLTK'],
     liveUrl: '#',
