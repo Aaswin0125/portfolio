@@ -74,7 +74,7 @@ export function TeachingSection() {
               ))}
             </div>
           </div>
-          <div className="lg:col-span-3 flex flex-col items-center space-y-12">
+          <div className="lg:col-span-3 space-y-12">
             <Card className="w-full">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl font-bold font-headline">Photo Gallery</CardTitle>
@@ -87,52 +87,54 @@ export function TeachingSection() {
               </div>
               </CardContent>
             </Card>
-            <Card className="w-full">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-bold font-headline">Impact by the Numbers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {stats.map(stat => (
-                    <div key={stat.label} className="text-center p-4 flex flex-col items-center justify-center rounded-lg bg-secondary">
-                      {stat.icon}
-                      <p className="text-2xl font-bold mt-2">{stat.value}</p>
-                      <p className="text-sm text-muted-foreground">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="w-full">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-bold font-headline">What Students Say</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Carousel>
-                  <CarouselContent>
-                    {testimonials.map((t) => (
-                      <CarouselItem key={t.name}>
-                        <div className="border-l-4 border-primary bg-secondary/30 p-6 rounded-r-lg">
-                          <p className="mb-4 text-lg italic">"{t.text}"</p>
-                          <div className="flex items-center gap-4">
-                            <Avatar className="h-12 w-12">
-                              <AvatarImage src={t.avatar} alt={t.name} data-ai-hint={t.aiHint} />
-                              <AvatarFallback>{t.name.substring(0,2)}</AvatarFallback>
-                            </Avatar>
-                            <div>
-                              <p className="font-semibold text-lg">{t.name}</p>
-                              <p className="text-sm text-muted-foreground">{t.role}</p>
-                            </div>
-                          </div>
+            <div className="grid md:grid-cols-2 gap-8">
+                <Card className="w-full">
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-2xl font-bold font-headline">Impact by the Numbers</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-2 gap-4">
+                      {stats.map(stat => (
+                        <div key={stat.label} className="text-center p-4 flex flex-col items-center justify-center rounded-lg bg-secondary">
+                          {stat.icon}
+                          <p className="text-2xl font-bold mt-2">{stat.value}</p>
+                          <p className="text-sm text-muted-foreground">{stat.label}</p>
                         </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="left-[-1rem] top-1/2 -translate-y-1/2" />
-                  <CarouselNext className="right-[-1rem] top-1/2 -translate-y-1/2" />
-                </Carousel>
-              </CardContent>
-            </Card>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className="w-full">
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-2xl font-bold font-headline">What Students Say</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Carousel>
+                      <CarouselContent>
+                        {testimonials.map((t) => (
+                          <CarouselItem key={t.name}>
+                            <div className="border-l-4 border-primary bg-secondary/30 p-6 rounded-r-lg h-full flex flex-col justify-center">
+                              <p className="mb-4 text-lg italic">"{t.text}"</p>
+                              <div className="flex items-center gap-4">
+                                <Avatar className="h-12 w-12">
+                                  <AvatarImage src={t.avatar} alt={t.name} data-ai-hint={t.aiHint} />
+                                  <AvatarFallback>{t.name.substring(0,2)}</AvatarFallback>
+                                </Avatar>
+                                <div>
+                                  <p className="font-semibold text-lg">{t.name}</p>
+                                  <p className="text-sm text-muted-foreground">{t.role}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious className="left-[-1rem] top-1/2 -translate-y-1/2" />
+                      <CarouselNext className="right-[-1rem] top-1/2 -translate-y-1/2" />
+                    </Carousel>
+                  </CardContent>
+                </Card>
+            </div>
             <Card className="w-full">
               <CardContent className="p-6 text-center">
                 <h3 className="text-2xl font-bold mb-4 font-headline">Ready to Learn?</h3>
