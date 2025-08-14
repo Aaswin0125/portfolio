@@ -1,4 +1,4 @@
-import { Card, CardContent } from "./ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 import { Users, Video, Award, BookOpen, Star } from "lucide-react"
@@ -75,34 +75,44 @@ export function TeachingSection() {
             </div>
           </div>
           <div className="lg:col-span-3 space-y-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 font-headline text-center">Photo Gallery</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {workshopImages.map((img, index) => (
-                    <Image key={index} src={img.src} alt={img.alt} width={600} height={400} className="rounded-lg object-cover hover:scale-105 transition-transform duration-300" data-ai-hint={img.aiHint} />
-                ))}
-            </div>
-            </div>
-             <div>
-              <h3 className="text-2xl font-bold mb-6 font-headline text-center">Impact by the Numbers</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {stats.map(stat => (
-                  <Card key={stat.label} className="text-center p-4 flex flex-col items-center justify-center">
-                    {stat.icon}
-                    <p className="text-2xl font-bold mt-2">{stat.value}</p>
-                    <p className="text-sm text-muted-foreground">{stat.label}</p>
-                  </Card>
-                ))}
+            <Card>
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold font-headline">Photo Gallery</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-4">
+                  {workshopImages.map((img, index) => (
+                      <Image key={index} src={img.src} alt={img.alt} width={600} height={400} className="rounded-lg object-cover hover:scale-105 transition-transform duration-300" data-ai-hint={img.aiHint} />
+                  ))}
               </div>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-6 font-headline text-center">What Students Say</h3>
-              <Carousel>
-                <CarouselContent>
-                  {testimonials.map((t) => (
-                    <CarouselItem key={t.name}>
-                      <Card className="border-l-4 border-primary">
-                        <CardContent className="p-6">
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold font-headline">Impact by the Numbers</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {stats.map(stat => (
+                    <div key={stat.label} className="text-center p-4 flex flex-col items-center justify-center rounded-lg bg-secondary">
+                      {stat.icon}
+                      <p className="text-2xl font-bold mt-2">{stat.value}</p>
+                      <p className="text-sm text-muted-foreground">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold font-headline">What Students Say</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Carousel>
+                  <CarouselContent>
+                    {testimonials.map((t) => (
+                      <CarouselItem key={t.name}>
+                        <div className="border-l-4 border-primary bg-secondary/30 p-6 rounded-r-lg">
                           <p className="mb-4 text-lg italic">"{t.text}"</p>
                           <div className="flex items-center gap-4">
                             <Avatar className="h-12 w-12">
@@ -114,16 +124,17 @@ export function TeachingSection() {
                               <p className="text-sm text-muted-foreground">{t.role}</p>
                             </div>
                           </div>
-                        </CardContent>
-                      </Card>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="left-[-1rem] top-1/2 -translate-y-1/2" />
-                <CarouselNext className="right-[-1rem] top-1/2 -translate-y-1/2" />
-              </Carousel>
-            </div>
-            <div className="text-center">
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-[-1rem] top-1/2 -translate-y-1/2" />
+                  <CarouselNext className="right-[-1rem] top-1/2 -translate-y-1/2" />
+                </Carousel>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
                 <h3 className="text-2xl font-bold mb-4 font-headline">Ready to Learn?</h3>
                 <p className="text-muted-foreground mb-6">Check out my upcoming workshops or request a custom training session.</p>
                 <div className="flex justify-center gap-4">
@@ -136,7 +147,8 @@ export function TeachingSection() {
                         <Link href="#contact">Corporate Training</Link>
                     </Button>
                 </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
