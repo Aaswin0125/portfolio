@@ -56,86 +56,95 @@ export function TeachingSection() {
           </p>
         </div>
 
-        <div className="grid gap-16 lg:grid-cols-5 lg:gap-8 items-start">
-          <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-6 font-headline">Experience Timeline</h3>
-            <div className="relative pl-6 after:absolute after:inset-y-0 after:w-px after:bg-primary/20 dark:after:bg-primary/10 after:left-0">
-              {timelineEvents.map((event, index) => (
-                <div key={index} className="relative mb-8 grid grid-cols-[auto_1fr] items-start gap-4">
-                  <div className="relative z-10 grid h-6 w-6 place-items-center rounded-full bg-gradient-to-tr from-brand-blue to-brand-emerald">
-                    <div className="h-2 w-2 rounded-full bg-primary-foreground" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">{event.date}</p>
-                    <h4 className="font-bold text-lg">{event.title}</h4>
-                    <p className="text-muted-foreground">{event.description}</p>
-                  </div>
+        <div className="grid gap-12 lg:gap-16">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+            <div className="lg:col-span-2">
+              <div className="space-y-8 sticky top-28">
+                <h3 className="text-2xl font-bold mb-6 font-headline text-center lg:text-left">Experience Timeline</h3>
+                <div className="relative pl-6 after:absolute after:inset-y-0 after:w-px after:bg-primary/20 dark:after:bg-primary/10 after:left-0">
+                  {timelineEvents.map((event, index) => (
+                    <div key={index} className="relative mb-8 grid grid-cols-[auto_1fr] items-start gap-4">
+                      <div className="relative z-10 grid h-6 w-6 place-items-center rounded-full bg-gradient-to-tr from-brand-blue to-brand-emerald">
+                        <div className="h-2 w-2 rounded-full bg-primary-foreground" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">{event.date}</p>
+                        <h4 className="font-bold text-lg">{event.title}</h4>
+                        <p className="text-muted-foreground">{event.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-3 space-y-12">
+              <Card>
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl font-bold font-headline">Photo Gallery</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-4">
+                    {workshopImages.map((img, index) => (
+                        <Image key={index} src={img.src} alt={img.alt} width={600} height={400} className="rounded-lg object-cover hover:scale-105 transition-transform duration-300" data-ai-hint={img.aiHint} />
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
-          <div className="lg:col-span-3 space-y-12">
-            <Card className="w-full">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-bold font-headline">Photo Gallery</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-4">
-                  {workshopImages.map((img, index) => (
-                      <Image key={index} src={img.src} alt={img.alt} width={600} height={400} className="rounded-lg object-cover hover:scale-105 transition-transform duration-300" data-ai-hint={img.aiHint} />
-                  ))}
-              </div>
-              </CardContent>
-            </Card>
+          
+          <div className="space-y-12">
             <div className="grid md:grid-cols-2 gap-8">
-                <Card className="w-full">
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-2xl font-bold font-headline">Impact by the Numbers</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-2 gap-4">
-                      {stats.map(stat => (
-                        <div key={stat.label} className="text-center p-4 flex flex-col items-center justify-center rounded-lg bg-secondary">
-                          {stat.icon}
-                          <p className="text-2xl font-bold mt-2">{stat.value}</p>
-                          <p className="text-sm text-muted-foreground">{stat.label}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="w-full">
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-2xl font-bold font-headline">What Students Say</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Carousel>
-                      <CarouselContent>
-                        {testimonials.map((t) => (
-                          <CarouselItem key={t.name}>
-                            <div className="border-l-4 border-primary bg-secondary/30 p-6 rounded-r-lg h-full flex flex-col justify-center">
-                              <p className="mb-4 text-lg italic">"{t.text}"</p>
-                              <div className="flex items-center gap-4">
-                                <Avatar className="h-12 w-12">
-                                  <AvatarImage src={t.avatar} alt={t.name} data-ai-hint={t.aiHint} />
-                                  <AvatarFallback>{t.name.substring(0,2)}</AvatarFallback>
-                                </Avatar>
-                                <div>
-                                  <p className="font-semibold text-lg">{t.name}</p>
-                                  <p className="text-sm text-muted-foreground">{t.role}</p>
-                                </div>
+              <Card>
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl font-bold font-headline">Impact by the Numbers</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-4">
+                    {stats.map(stat => (
+                      <div key={stat.label} className="text-center p-4 flex flex-col items-center justify-center rounded-lg bg-secondary">
+                        {stat.icon}
+                        <p className="text-2xl font-bold mt-2">{stat.value}</p>
+                        <p className="text-sm text-muted-foreground">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl font-bold font-headline">What Students Say</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Carousel>
+                    <CarouselContent>
+                      {testimonials.map((t) => (
+                        <CarouselItem key={t.name}>
+                          <div className="border-l-4 border-primary bg-secondary/30 p-6 rounded-r-lg h-full flex flex-col justify-center text-center lg:text-left">
+                            <p className="mb-4 text-lg italic">"{t.text}"</p>
+                            <div className="flex items-center gap-4 justify-center lg:justify-start">
+                              <Avatar className="h-12 w-12">
+                                <AvatarImage src={t.avatar} alt={t.name} data-ai-hint={t.aiHint} />
+                                <AvatarFallback>{t.name.substring(0,2)}</AvatarFallback>
+                              </Avatar>
+                              <div>
+                                <p className="font-semibold text-lg">{t.name}</p>
+                                <p className="text-sm text-muted-foreground">{t.role}</p>
                               </div>
                             </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      <CarouselPrevious className="left-[-1rem] top-1/2 -translate-y-1/2" />
-                      <CarouselNext className="right-[-1rem] top-1/2 -translate-y-1/2" />
-                    </Carousel>
-                  </CardContent>
-                </Card>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-[-1rem] top-1/2 -translate-y-1/2" />
+                    <CarouselNext className="right-[-1rem] top-1/2 -translate-y-1/2" />
+                  </Carousel>
+                </CardContent>
+              </Card>
             </div>
-            <Card className="w-full">
+
+            <Card>
               <CardContent className="p-6 text-center">
                 <h3 className="text-2xl font-bold mb-4 font-headline">Ready to Learn?</h3>
                 <p className="text-muted-foreground mb-6">Check out my upcoming workshops or request a custom training session.</p>
