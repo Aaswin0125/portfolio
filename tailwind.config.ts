@@ -1,4 +1,43 @@
 import type {Config} from 'tailwindcss';
+const {
+  default: flattenColorPalette,
+} = require('tailwindcss/lib/util/flattenColorPalette');
+
+function addVariablesForColors({addBase, theme}: any) {
+  let allColors = flattenColorPalette(theme('colors'));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ':root': newVars,
+  });
+}
+
+function addGridPattern(
+  {matchUtilities, theme}: any,
+  options: {
+    values?: any;
+    variants?: any;
+    respectPrefix?: any;
+    respectImportant?: any;
+  } = {}
+) {
+  matchUtilities(
+    {
+      'bg-grid': (value: string) => ({
+        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='${value}'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+      }),
+      'bg-grid-small': (value: string) => ({
+        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='8' height='8' fill='none' stroke='${value}'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+      }),
+      'bg-dot': (value: string) => ({
+        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3e%3ccircle fill='${value}' id='pattern-circle' cx='10' cy='10' r='1.625'%3e%3c/circle%3e%3c/svg%3e")`,
+      }),
+    },
+    {values: flattenColorPalette(theme('backgroundColor')), type: 'color'}
+  );
+}
 
 export default {
   darkMode: ['class'],
@@ -10,9 +49,9 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: '2rem',
       screens: {
-        "2xl": "1400px",
+        '2xl': '1400px',
       },
     },
     extend: {
@@ -73,11 +112,11 @@ export default {
           ring: 'hsl(var(--sidebar-ring))',
         },
         brand: {
-            blue: 'hsl(var(--brand-blue))',
-            emerald: 'hsl(var(--brand-emerald))',
-            purple: 'hsl(var(--brand-purple))',
-            orange: 'hsl(var(--brand-orange))',
-        }
+          blue: 'hsl(var(--brand-blue))',
+          emerald: 'hsl(var(--brand-emerald))',
+          purple: 'hsl(var(--brand-purple))',
+          orange: 'hsl(var(--brand-orange))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -108,5 +147,5 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), addVariablesForColors, addGridPattern],
 } satisfies Config;
