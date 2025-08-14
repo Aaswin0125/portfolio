@@ -107,46 +107,48 @@ export function ProjectsSection() {
             </Button>
           ))}
         </div>
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="flex overflow-x-auto py-4 -mx-4 px-4 space-x-8 snap-x snap-mandatory">
           {filteredProjects.map((project) => (
-            <Card key={project.title} className="group overflow-hidden relative">
-              <div className="aspect-video relative overflow-hidden rounded-t-lg">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  data-ai-hint={project.aiHint}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                 <div className="absolute bottom-0 left-0 p-6">
-                    <div className="flex flex-wrap gap-2 mb-2">
-                        {project.tags.map(tag => <Badge key={tag} variant="secondary" className="bg-white/20 text-white backdrop-blur-sm">{tag}</Badge>)}
-                    </div>
-                    <CardTitle className="font-headline text-2xl text-white">{project.title}</CardTitle>
-                </div>
-              </div>
-              <div className="absolute inset-0 bg-background/90 flex flex-col justify-center items-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex justify-center gap-4">
-                      {project.liveUrl && (
-                        <Button asChild>
-                          <Link href={project.liveUrl} target="_blank">Live Demo <ArrowUpRight className="ml-2 h-4 w-4" /></Link>
-                        </Button>
-                      )}
-                      {project.caseStudyUrl && (
-                        <Button asChild variant="secondary">
-                           <Link href={project.caseStudyUrl} target="_blank">Case Study</Link>
-                        </Button>
-                      )}
-                      {project.repoUrl && (
-                        <Button asChild variant="ghost">
-                          <Link href={project.repoUrl} target="_blank">GitHub Repo</Link>
-                        </Button>
-                      )}
+            <div key={project.title} className="flex-shrink-0 w-[80vw] max-w-sm md:w-1/2 lg:w-1/3 snap-center">
+              <Card className="group overflow-hidden relative h-full flex flex-col">
+                <div className="aspect-video relative overflow-hidden rounded-t-lg">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-ai-hint={project.aiHint}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                   <div className="absolute bottom-0 left-0 p-6">
+                      <div className="flex flex-wrap gap-2 mb-2">
+                          {project.tags.map(tag => <Badge key={tag} variant="secondary" className="bg-white/20 text-white backdrop-blur-sm">{tag}</Badge>)}
+                      </div>
+                      <CardTitle className="font-headline text-2xl text-white">{project.title}</CardTitle>
                   </div>
-              </div>
-            </Card>
+                </div>
+                <div className="absolute inset-0 bg-background/90 flex flex-col justify-center items-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-muted-foreground mb-4">{project.description}</p>
+                    <div className="flex justify-center gap-4">
+                        {project.liveUrl && (
+                          <Button asChild>
+                            <Link href={project.liveUrl} target="_blank">Live Demo <ArrowUpRight className="ml-2 h-4 w-4" /></Link>
+                          </Button>
+                        )}
+                        {project.caseStudyUrl && (
+                          <Button asChild variant="secondary">
+                             <Link href={project.caseStudyUrl} target="_blank">Case Study</Link>
+                          </Button>
+                        )}
+                        {project.repoUrl && (
+                          <Button asChild variant="ghost">
+                            <Link href={project.repoUrl} target="_blank">GitHub Repo</Link>
+                          </Button>
+                        )}
+                    </div>
+                </div>
+              </Card>
+            </div>
           ))}
         </div>
       </div>
