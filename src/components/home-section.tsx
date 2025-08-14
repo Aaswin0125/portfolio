@@ -12,7 +12,7 @@ const highlightCards = [
 
 export function HomeSection() {
   return (
-    <section id="home" className="relative w-full h-dvh min-h-[700px] flex items-center justify-center bg-background dark:bg-dot-white/[0.2] bg-dot-black/[0.2]">
+    <section id="home" className="relative w-full h-dvh min-h-[700px] flex items-center justify-center">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-background bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="container px-4 md:px-6 text-center">
             <div className="flex flex-col items-center space-y-4">

@@ -36,7 +36,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={cn("min-h-screen bg-background font-body antialiased")}>
+      <body className={cn("min-h-screen bg-background font-body antialiased dark:bg-dot-white/[0.2] bg-dot-black/[0.2]")}>
         {children}
         <Toaster />
         <Script
