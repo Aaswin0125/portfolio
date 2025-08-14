@@ -13,10 +13,22 @@ export function AboutSection() {
     <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6">
         <div className="grid gap-10 md:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col justify-center space-y-6">
+          <div className="order-2 flex items-center justify-center md:order-1">
+             <Image
+              src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8Y29tcHV0ZXJ8ZW58MHx8fHwxNzU1MTYxNzQzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+              width={450}
+              height={450}
+              alt="Nikesh Bhujel"
+              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
+              data-ai-hint="professional portrait"
+            />
+          </div>
+          <div className="order-1 flex flex-col justify-center space-y-6 md:order-2">
             <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium">About Me</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">My Story: Code, Teach, Innovate</h2>
+              <div className="flex items-center justify-between">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">My Story: Code, Teach, Innovate</h2>
+                <div className="hidden rounded-lg bg-secondary px-3 py-1 text-sm font-medium md:inline-block">About Me</div>
+              </div>
               <div className="space-y-4 text-muted-foreground md:text-lg/relaxed">
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Who I am</h3>
@@ -51,16 +63,6 @@ export function AboutSection() {
                 </a>
               </Button>
             </div>
-          </div>
-          <div className="flex items-center justify-center">
-             <Image
-              src="https://placehold.co/450x450.png"
-              width={450}
-              height={450}
-              alt="Nikesh Bhujel"
-              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
-              data-ai-hint="professional portrait"
-            />
           </div>
         </div>
       </div>
