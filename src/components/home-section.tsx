@@ -21,7 +21,7 @@ export function HomeSection() {
                     Nikesh Bhujel
                     </h1>
                     <p className="mx-auto max-w-[700px] text-primary md:text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-emerald">
-                    Computer Engineer, Educator, Entrepreneur
+                    Computer Engineer, Computer Teacher, Entrepreneur
                     </p>
                     <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                     Building innovative solutions and empowering the next generation of tech leaders.
