@@ -38,10 +38,10 @@ const testimonials = [
 ]
 
 const workshopImages = [
-    { src: "https://placehold.co/600x400.png", alt: "Workshop photo 1", aiHint: "workshop in progress" },
-    { src: "https://placehold.co/600x400.png", alt: "Workshop photo 2", aiHint: "speaker on stage" },
-    { src: "https://placehold.co/600x400.png", alt: "Workshop photo 3", aiHint: "students collaborating" },
-    { src: "https://placehold.co/600x400.png", alt: "Workshop photo 4", aiHint: "whiteboard discussion" },
+    { src: "https://images.unsplash.com/photo-1490223966554-5de0fd551b91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b3Jrc2hvcCUyMGluJTIwcHJvZ3Jlc3N8ZW58MHx8fHwxNzU1MTYyMTI4fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Workshop photo 1", aiHint: "workshop in progress" },
+    { src: "https://images.unsplash.com/photo-1609234656384-84223e86cf49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3BlYWtlciUyMG9uJTIwc3RhZ2V8ZW58MHx8fHwxNzU1MTYyMTI5fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Workshop photo 2", aiHint: "speaker on stage" },
+    { src: "https://images.unsplash.com/photo-1578402027070-0f5ebd84ec9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzdHVkZW50cyUyMGNvbGxhYm9yYXRpbmd8ZW58MHx8fHwxNzU1MTYyMTI5fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Workshop photo 3", aiHint: "students collaborating" },
+    { src: "https://images.unsplash.com/photo-1511629091441-ee46146481b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3aGl0ZWJvYXJkJTIwZGlzY3Vzc2lvbnxlbnwwfHx8fDE3NTUxNjIxMjh8MA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Workshop photo 4", aiHint: "whiteboard discussion" },
 ]
 
 export function TeachingSection() {
@@ -79,23 +79,25 @@ export function TeachingSection() {
             </div>
 
             <div className="lg:col-span-3 space-y-12">
-              <Card>
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl font-bold font-headline">Photo Gallery</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-2 gap-4">
-                    {workshopImages.map((img, index) => (
-                        <Image key={index} src={img.src} alt={img.alt} width={600} height={400} className="rounded-lg object-cover hover:scale-105 transition-transform duration-300" data-ai-hint={img.aiHint} />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+               <div className="grid md:grid-cols-1 gap-8">
+                <Card>
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-2xl font-bold font-headline">Photo Gallery</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-2 gap-4">
+                      {workshopImages.map((img, index) => (
+                          <Image key={index} src={img.src} alt={img.alt} width={600} height={400} className="rounded-lg object-cover hover:scale-105 transition-transform duration-300" data-ai-hint={img.aiHint} />
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
           
-          <div className="space-y-12">
-            <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-8">
+             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardHeader className="text-center">
                   <CardTitle className="text-2xl font-bold font-headline">Impact by the Numbers</CardTitle>
