@@ -5,7 +5,6 @@ import { ThemeToggle } from './theme-toggle'
 import { Button } from './ui/button'
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 import { useState } from 'react'
-import { cn } from '@/lib/utils'
 
 const NAV_LINKS = [
   { href: '#about', label: 'About' },
@@ -25,7 +24,7 @@ export function Header() {
         <div className="mr-4 flex items-center">
           <Link href="#home" className="mr-6 flex items-center space-x-2">
             <Mountain className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline text-lg">Nikesh Raj</span>
+            <span className="font-bold font-headline text-lg">Nikesh Bhujel</span>
           </Link>
           <nav className="hidden items-center gap-6 text-sm md:flex">
             {NAV_LINKS.map(link => (
@@ -45,7 +44,7 @@ export function Header() {
             <SheetContent side="left">
               <Link href="#home" className="mr-6 flex items-center space-x-2" onClick={() => setIsSheetOpen(false)}>
                 <Mountain className="h-6 w-6 text-primary" />
-                <span className="font-bold font-headline text-lg">Nikesh Raj</span>
+                <span className="font-bold font-headline text-lg">Nikesh Bhujel</span>
               </Link>
               <div className="my-4 h-[1px] w-full shrink-0 bg-border" />
               <div className="flex flex-col gap-4">

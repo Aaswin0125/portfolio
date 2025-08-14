@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Nikesh Raj | Computer Engineer, Educator, Entrepreneur',
-  description: 'The personal portfolio of Nikesh Raj Bhujel, a Computer Engineer, Educator, and Entrepreneur, showcasing skills, projects, and professional experience.',
-  keywords: "Nikesh Raj Bhujel, portfolio, computer engineer, educator, entrepreneur, web developer, Next.js, React",
+  title: 'Nikesh Bhujel | Computer Engineer, Educator, Entrepreneur',
+  description: 'The personal portfolio of Nikesh Bhujel, a Computer Engineer, Educator, and Entrepreneur, showcasing skills, projects, and professional experience.',
+  keywords: "Nikesh Bhujel, portfolio, computer engineer, educator, entrepreneur, web developer, Next.js, React",
 };
 
 export default function RootLayout({

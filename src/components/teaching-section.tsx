@@ -2,6 +2,7 @@ import { Card, CardContent } from "./ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 import { Users, Video, Award } from "lucide-react"
+import Image from "next/image"
 
 const timelineEvents = [
   {
@@ -22,7 +23,7 @@ const timelineEvents = [
 ]
 
 const stats = [
-  { icon: <Users className="h-8 w-8 text-primary" />, value: "1000+", label: "Students Taught" },
+  { icon: <Users className="h-8 w-8 text-primary" />, value: "500+", label: "Students Taught" },
   { icon: <Video className="h-8 w-8 text-primary" />, value: "50+", label: "Workshops Conducted" },
   { icon: <Award className="h-8 w-8 text-primary" />, value: "4.9/5", label: "Average Rating" },
 ]
@@ -38,32 +39,37 @@ export function TeachingSection() {
     <section id="teaching" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/30">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium">Teaching</div>
+          <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium">Workshops & Teaching</div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Sharing Knowledge, Inspiring Growth</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             My journey in education is driven by a passion for empowering others to succeed in the tech industry.
           </p>
         </div>
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-12">
-          <div>
+
+        <div className="grid gap-16 lg:grid-cols-5 lg:gap-8 items-start">
+          <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold mb-6 font-headline">Experience Timeline</h3>
             <div className="relative pl-6 after:absolute after:inset-y-0 after:w-px after:bg-primary after:left-0">
               {timelineEvents.map((event, index) => (
                 <div key={index} className="relative mb-8 grid grid-cols-[auto_1fr] items-start gap-4">
-                  <div className="relative z-10 grid h-6 w-6 place-items-center rounded-full bg-primary text-primary-foreground">
+                  <div className="relative z-10 grid h-6 w-6 place-items-center rounded-full bg-primary">
                     <div className="h-2 w-2 rounded-full bg-primary-foreground" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">{event.date}</p>
                     <h4 className="font-bold">{event.title}</h4>
-                    <p className="text-sm">{event.description}</p>
+                    <p className="text-sm text-muted-foreground">{event.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="space-y-12">
-            <div>
+          <div className="lg:col-span-3 space-y-12">
+            <div className="grid grid-cols-2 gap-4">
+                <Image src="https://placehold.co/600x400.png" alt="Workshop photo 1" width={600} height={400} className="rounded-lg object-cover" data-ai-hint="workshop in progress" />
+                <Image src="https://placehold.co/600x400.png" alt="Workshop photo 2" width={600} height={400} className="rounded-lg object-cover" data-ai-hint="speaker on stage" />
+            </div>
+             <div>
               <h3 className="text-2xl font-bold mb-6 font-headline">Impact by the Numbers</h3>
               <div className="grid grid-cols-3 gap-4">
                 {stats.map(stat => (
@@ -99,8 +105,8 @@ export function TeachingSection() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="left-[-1rem]" />
+                <CarouselNext className="right-[-1rem]" />
               </Carousel>
             </div>
           </div>
