@@ -13,16 +13,6 @@ export function AboutSection() {
     <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="flex items-center justify-center">
-             <Image
-              src="https://placehold.co/550x550.png"
-              width={550}
-              height={550}
-              alt="Nikesh Bhujel"
-              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full"
-              data-ai-hint="professional portrait"
-            />
-          </div>
           <div className="flex flex-col justify-center space-y-6">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium">About Me</div>
@@ -61,6 +51,16 @@ export function AboutSection() {
                 </a>
               </Button>
             </div>
+          </div>
+          <div className="flex items-center justify-center">
+             <Image
+              src="https://placehold.co/450x450.png"
+              width={450}
+              height={450}
+              alt="Nikesh Bhujel"
+              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
+              data-ai-hint="professional portrait"
+            />
           </div>
         </div>
       </div>
